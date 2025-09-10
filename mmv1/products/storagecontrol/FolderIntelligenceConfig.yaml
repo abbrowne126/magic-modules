@@ -49,6 +49,10 @@ import_format:
 # the resource. If false, that code is not generated.
 autogen_async: false
 
+datasource:
+  generate: true
+  exclude_test: true
+
 examples:
   - name: storage_control_folder_intelligence_config_basic
     primary_resource_id: example
@@ -187,3 +191,14 @@ properties:
         output: true
         description: |
           The `StorageIntelligence` edition that is applicable for the resource.
+  - name: 'trialConfig'
+    output: true
+    description: |
+      The trial configuration of the Storage Intelligence resource.
+    type: NestedObject
+    properties:
+      - name: expireTime
+        type: String
+        output: true
+        description: |
+          The time at which the trial expires.
